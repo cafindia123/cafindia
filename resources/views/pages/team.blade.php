@@ -12,16 +12,14 @@
     background-repeat: no-repeat;
   }
   .team-name-container{
-    width: 30%;
+    width: 25%;
   }
   .team-name h3 {
     color: var(--base-color);
     font-size: 20px;
-    margin: 20px 0;
-
+    margin: 0 0 20px 0;
     font-weight: bold;
 }
-  }
   .team-about-container{
     width: 65%;
   }
@@ -49,24 +47,13 @@
         <div class="container-inner">
           <h3 class="heading_c">{{ $sectionKey }}</h3>
           <div class="row p-3">
-            @foreach ($sectionData as $rowKey=>$rowData)
-              {{-- <div class="col-md-3">
-                <div class="trustee-container item">
-                  <div class="trustee-image-container" style="background-image: url({{Voyager::image( $rowData->image )}})">
-                  </div>
-                  <div class="borders"></div>
-                  <div class="trustee-name">
-                    <h3>{{$rowData->name}}</h3>
-                    {{$rowData->designation}}
-                  </div>
-                </div>
-              </div> --}}
+            @foreach ($sectionData as $rowKey=>$rowData) 
               <div class="col-md-12 p-0 mb-3 custom-media-style">
                 @if($rowData->image)
                     <div class="custom-media-file left-style" style="background-image: url({{ Voyager::image( $rowData->image )}});" ></div>
                 @endif
-                <div class="custom-media-text @if($rowData->image) @else w-100 @endif right-style d-flex justify-content-evenly">
-                  <div class="team-name-container">
+                <div class="custom-media-text @if($rowData->image) @else w-100 @endif right-style ">
+                  <div class="team-name-container " style="float: left;">
                     <div class="team-name">
                       <h3>{{$rowData->name}}</h3>
                     </div>
@@ -74,21 +61,15 @@
                       {{$rowData->designation}}
                     </div>
                   </div>
-                  <div class="team-about-container">
-                    <div class="team-about">
-                      {{-- {{ $rowData->about }} --}}
+                  <div class="team-about-container" style="float: left;">
+                    <div class="team-about"> 
+                      {{$rowData->description}}
                     </div>
-                    <div>
-                      {{-- @if($rowData->link)
-                            <a style="color: inherit" href="{{ $rowData->link }}" target="_blank" title="{{$rowData->link_text}}">{{ $rowData->title }}</a>
-                        @else
-                            <a style="color: inherit" href="{{ '/content-details/'.$mainSlug.'/'.$rowData->slug }}">{{ $rowData->title }}</a>
-                        @endif
-                    </div> --}}
                   </div>
+                  <div style="clear: both;"></div>
                 </div>
                 <div style="clear: both;"></div>
-            </div> 
+              </div>
             @endforeach
           </div>
         </div>

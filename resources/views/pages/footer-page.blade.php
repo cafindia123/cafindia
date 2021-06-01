@@ -70,6 +70,10 @@ nav div:first-child{
 	background: none !important;
 }
 
+.heading_c{
+		font-family: 'BEBAS';
+		font-weight: 400;
+	}
 </style>
 <!-- ======= Hero Section ======= -->
 <section id="hero">
@@ -126,7 +130,13 @@ nav div:first-child{
 	$isImageDone=false;
 
 	$mainSlug = $dataRow->slug;
+
+	$thematicSlug = '';
+
+	if($dataRow->category)
+		$thematicSlug = $dataRow->category->slug;
 ?> 
+
 @if ($dataRow->alignment_type=='TR')
 	@php $lastBgStyle = 0; @endphp
 	<div class="container-fluid bg-while">
@@ -204,7 +214,11 @@ nav div:first-child{
 											@if($rowData->has_pagination )
 												@foreach($rowData->card_children_paginated as $rowKey=>$rowData)
 													@if($rowData->image_icon == 1 )
-														@include('pages.primary-layout.image')
+														@if ($thematicSlug == "thematic-impacts")
+															@include('pages.primary-layout.thematic-image')
+														@else
+															@include('pages.primary-layout.image')
+														@endif
 														@php $isImage=true; @endphp
 													@elseif($rowData->image_icon == 2 )
 														@include('pages.primary-layout.icon')
@@ -218,7 +232,11 @@ nav div:first-child{
 											@else
 												@foreach($rowData->card_children as $rowKey=>$rowData)
 													@if($rowData->image_icon == 1 )
-														@include('pages.primary-layout.image')
+														@if ($thematicSlug == "thematic-impacts")
+															@include('pages.primary-layout.thematic-image')
+														@else
+															@include('pages.primary-layout.image')
+														@endif
 														@php $isImage=true; @endphp
 													@elseif($rowData->image_icon == 2 )
 														@include('pages.primary-layout.icon')
@@ -306,7 +324,7 @@ nav div:first-child{
 			?>
 			<section class="container-fluid @if($rowData->bg_style == 'auto' ) @if($lastBgStyle == 1) bg-white @else bg-light @endif @else bg-{{ $rowData->bg_style }} @endif">
 				<div class="container-inner">
-					<div class="row mt-2">
+					<div class="row my-2">
 						<div class="col-md-12">
 							@if($rowData->template_type == 'MEDIA' )
 								@include('pages.primary-layout.single')
@@ -342,7 +360,11 @@ nav div:first-child{
 									@if($rowData->has_pagination)
 										@foreach($rowData->card_children_paginated as $rowKey=>$rowData)
 											@if($rowData->image_icon == 1 )
-												@include('pages.primary-layout.image')
+												@if ($thematicSlug == "thematic-impacts")
+													@include('pages.primary-layout.thematic-image')
+												@else
+													@include('pages.primary-layout.image')
+												@endif
 												@php $isImage=true; @endphp
 											@elseif($rowData->image_icon == 2 )
 												@include('pages.primary-layout.icon')
@@ -356,7 +378,11 @@ nav div:first-child{
 									@else
 										@foreach($rowData->card_children as $rowKey=>$rowData)
 											@if($rowData->image_icon == 1 )
-												@include('pages.primary-layout.image')
+												@if ($thematicSlug == "thematic-impacts")
+													@include('pages.primary-layout.thematic-image')
+												@else
+													@include('pages.primary-layout.image')
+												@endif
 												@php $isImage=true; @endphp
 											@elseif($rowData->image_icon == 2 )
 												@include('pages.primary-layout.icon')

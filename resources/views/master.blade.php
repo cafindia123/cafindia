@@ -169,6 +169,8 @@
 				 <h4 class="footer_header">
            @if (strtolower($rowData->name) == 'who we are')
            <a href="{{ route('footerNavBarChaild', ['category_slug' => $parentCat,'child_slug'=>$post_slug ])}}">{{$rowData->name}}</a>
+          @elseif (strtolower($rowData->name) == 'what we do')
+          <a href="{{ route('footerNavBarChaild', ['category_slug' => $parentCat,'child_slug'=>$post_slug ])}}">{{$rowData->name}}</a>
           @else
           <a>{{$rowData->name}}</a>
            @endif
@@ -180,7 +182,9 @@
 						@if($rowData->post)
               @if($rowData->slug == "connect-workshop")
                 <li><a href="{{ route('PrimaryNavBarChaild', ['page_slug' =>'for-ngos','child_slug'=>'capacity-building' ])}}">{{$rowData->name}}</a></li>
-							@else
+							@elseif($rowData->slug == "thematic-impacts")
+                
+              @else
                 <li class="childNav @if($rowData->children->isNotEmpty()) drop-down @endif">
                   <a href="{{ route('footerNavBarChaild', ['category_slug' => $parentCat,'child_slug'=>$rowData->slug ])}}">{{$rowData->name}}</a>
                   @if($rowData->children->isNotEmpty())

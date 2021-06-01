@@ -183,11 +183,11 @@
                             <div class="form-group">
                                <h4 class=""> <label for="category_id">Footer Pages</label> </h4>
 								<?php //whereNotIn("slug",FOOTER_NAVIGATION_PARENT)->
-								$query->whereNotExists(function ($query) {
-												$query->select(\DB::raw(1))
-												  ->from('posts')
-												  ->whereRaw('posts.category_id = categories.id');
-												});
+								// $query->whereNotExists(function ($query) {
+												// $query->select(\DB::raw(1))
+												//   ->from('posts')
+												//   ->whereRaw('posts.category_id = categories.id');
+												// });
 								?>
                                 <select class="form-control select2" name="category_id">
 									<option value="">Please Select Main Footer Page</option>

@@ -11,6 +11,13 @@
 /*-------------------------------------
 Custom fonts
 -------------------------------------*/
+
+@font-face {
+  font-family: "Scribble-Regular";
+  src: url("./fonts/scribble_regular.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
 @font-face {
   font-family: "GothamBlack";
   src: url("./fonts/GothamBlackRegular.eot"); /* IE9 Compat Modes */
@@ -284,12 +291,24 @@ img{
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+#header::before{
+  content: '';
+  position:fixed;
+  top: 0;
+  left:0;
+  width: 100vw;
+  height: 20px;
+  z-index: -1;
+  background: #FFF;
+}
 #header {
   height: 90px;
   transition: all 0.5s;
   transition: all 0.5s;
   padding: 0 0;
-  position: relative;
+  position: sticky;
+  top:8px;
+  background: #fff;
   z-index: 997;
 }
 .heads{
@@ -3504,7 +3523,7 @@ a.vs_link{
   width: 45%;
   height: 350px;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 
 } 
@@ -3528,6 +3547,13 @@ ul li::marker{
 .card-image-section{
   width: 100%;
   height: 170px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.thematic-card-image-section{
+  width: 100%;
+  height: 280px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

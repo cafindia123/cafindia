@@ -107,7 +107,11 @@
 							@elseif (count($title) == 2 )
 								{!! $title[0] .'&nbsp; ' !!} <span style="color:var(--base-color)">{!! $title[1] !!}</span>
 							@else
-								{!! $title[0].' &nbsp;'.$title[1] !!}
+								@if (strtolower($dataRow->title) == 'caf i direct')
+									{!! $title[0] !!} <span style="font-family: Scribble-Regular !important; font-size: 95px; text-transform: lowercase">{!! $title[1] !!}</span>
+								@else
+									{!! $title[0].' &nbsp;'.$title[1] !!}
+								@endif
 								<span style="color:var(--base-color)">
 									@for ($i=2; $i< count($title); $i++)
 										{!! '&nbsp; '.$title[$i] !!}
