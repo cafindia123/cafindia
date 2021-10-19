@@ -1,11 +1,22 @@
-[06-Feb-2021 01:30:15 Asia/Kolkata] PHP Fatal error:  Cannot declare class App\Http\Controllers\VoyagerBaseController\VoyagerBaseController because the name is already in use in /home/jaisalme/public_html/cafindia/app/Http/Controllers/VoyagerBaseController.php on line 18
-[31-Mar-2021 13:35:14 Asia/Kolkata] PHP Fatal error:  During class fetch: Uncaught ErrorException: Class 'Symfony\Contracts\Translation\TranslatorInterface' not found in /home/jaisalme/public_html/cafindia/vendor/nesbot/carbon/src/Carbon/Traits/Localization.php:27
-Stack trace:
-#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'Class 'Symfony\\...', '/home/jaisalme/...', 27, Array)
-#1 /home/jaisalme/public_html/cafindia/vendor/nesbot/carbon/src/Carbon/Traits/Localization.php(27): class_alias('Symfony\\Contrac...', 'Symfony\\Compone...')
-#2 /home/jaisalme/public_html/cafindia/vendor/composer/ClassLoader.php(444): include('/home/jaisalme/...')
-#3 /home/jaisalme/public_html/cafindia/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/jaisalme/...')
-#4 [internal function]: Composer\Autoload\ClassLoader->loadClass('Carbon\\Traits\\L...')
-#5 /home/jaisalme/public_html/cafindia/vendor/nesbot/carbon/src/Carbon/Traits/Options.php(26): spl_autoload_call('Carbon\\Traits\\L...')
-#6 /home/jaisalme/public_html/cafin in /home/jaisalme/public_html/cafindia/vendor/nesbot/carbon/src/Carbon/Traits/Options.php on line 26
-[31-Mar-2021 14:02:30 Asia/Kolkata] PHP Fatal error:  Trait 'Illuminate\View\Compilers\Concerns\CompilesComments' not found in /home/jaisalme/public_html/cafindia/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php on line 9
+[13-Sep-2021 18:49:12 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[13-Sep-2021 18:57:49 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[13-Sep-2021 19:07:57 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[13-Sep-2021 19:09:54 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[13-Sep-2021 19:14:29 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[13-Sep-2021 19:16:04 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[13-Sep-2021 19:19:42 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[13-Sep-2021 19:20:35 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[13-Sep-2021 19:22:35 Asia/Kolkata] f7u4u6AVpA0iIly-cugQ7OcxlnSTIgSiYqc41PUdXqY
+[13-Sep-2021 19:23:25 Asia/Kolkata] f7u4u6AVpA0iIly-cugQ7OcxlnSTIgSiYqc41PUdXqY
+[14-Sep-2021 11:20:48 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[14-Sep-2021 11:22:41 Asia/Kolkata] cjCIcdYl-TTB5sRgs4llT1uQ-nUhNd_mHsTlNRzdTFA
+[14-Sep-2021 11:27:13 Asia/Kolkata] cjCIcdYl-TTB5sRgs4llT1uQ-nUhNd_mHsTlNRzdTFA
+[14-Sep-2021 11:28:41 Asia/Kolkata] cjCIcdYl-TTB5sRgs4llT1uQ-nUhNd_mHsTlNRzdTFA
+[14-Sep-2021 11:28:52 Asia/Kolkata] cjCIcdYl-TTB5sRgs4llT1uQ-nUhNd_mHsTlNRzdTFA
+[14-Sep-2021 11:29:01 Asia/Kolkata] cjCIcdYl-TTB5sRgs4llT1uQ-nUhNd_mHsTlNRzdTFA
+[14-Sep-2021 11:31:43 Asia/Kolkata] cjCIcdYl-TTB5sRgs4llT1uQ-nUhNd_mHsTlNRzdTFA
+[14-Sep-2021 11:43:53 Asia/Kolkata] cjCIcdYl-TTB5sRgs4llT1uQ-nUhNd_mHsTlNRzdTFA
+[14-Sep-2021 11:46:03 Asia/Kolkata] tOBk1vx1OSmhvG2aWBhSY5m2wz3F-9awyaWh2Ri2DXU
+[14-Sep-2021 14:13:26 Asia/Kolkata] f7u4u6AVpA0iIly-cugQ7OcxlnSTIgSiYqc41PUdXqY
+[14-Sep-2021 14:15:13 Asia/Kolkata] cjCIcdYl-TTB5sRgs4llT1uQ-nUhNd_mHsTlNRzdTFA
+[18-Oct-2021 15:07:37 Asia/Kolkata] f7u4u6AVpA0iIly-cugQ7OcxlnSTIgSiYqc41PUdXqY

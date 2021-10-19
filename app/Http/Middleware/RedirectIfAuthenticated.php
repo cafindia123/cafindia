@@ -2,10 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use Aacotroneo\Saml2\Saml2Auth;
 use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 
 class RedirectIfAuthenticated
 {

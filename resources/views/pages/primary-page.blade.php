@@ -428,7 +428,7 @@
 															@php $isImage=true; @endphp
 														@elseif($rowData->image_icon == 2 )
 															@include('pages.primary-layout.icon')
-														@elseif($rowData->image_icon == 3 )
+														@elseif($rowData->image_icon == 3 ) 
 															@include('pages.primary-layout.without-image-icon')
 														@endif
 													@endforeach

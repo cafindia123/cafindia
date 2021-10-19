@@ -223,6 +223,7 @@ nav div:first-child{
 													@elseif($rowData->image_icon == 2 )
 														@include('pages.primary-layout.icon')
 													@elseif($rowData->image_icon == 3 )
+													
 														@include('pages.primary-layout.without-image-icon')
 													@endif
 												@endforeach
@@ -240,7 +241,7 @@ nav div:first-child{
 														@php $isImage=true; @endphp
 													@elseif($rowData->image_icon == 2 )
 														@include('pages.primary-layout.icon')
-													@elseif($rowData->image_icon == 3 )
+													@elseif($rowData->image_icon == 3 ) 
 														@include('pages.primary-layout.without-image-icon')
 													@endif
 												@endforeach
@@ -357,19 +358,29 @@ nav div:first-child{
 								<h3 class="heading_c">{{$rowData->title}}</h3>
 								<p>{!! $rowData->description !!}</p>
 								<div class="row d-flex align-items-stretch ">
+								    <?php 
+								        $catSlug = $rowData->title
+								    ?>
 									@if($rowData->has_pagination)
+									    
 										@foreach($rowData->card_children_paginated as $rowKey=>$rowData)
 											@if($rowData->image_icon == 1 )
-												@if ($thematicSlug == "thematic-impacts")
+											    @if ($thematicSlug == "thematic-impacts")
 													@include('pages.primary-layout.thematic-image')
-												@else
+												@elseif(strpos(strtoupper($catSlug), 'ANNUAL REPORTS') !== false)
+											        @include('pages.primary-layout.image-annual-report')
+											    @else
 													@include('pages.primary-layout.image')
 												@endif
 												@php $isImage=true; @endphp
 											@elseif($rowData->image_icon == 2 )
 												@include('pages.primary-layout.icon')
 											@elseif($rowData->image_icon == 3 )
-												@include('pages.primary-layout.without-image-icon')
+											    @if(strpos(strtoupper($catSlug), 'ANNUAL REPORTS') !== false)
+											        @include('pages.primary-layout.without-image-icon-annual-report')
+											    @else
+												    @include('pages.primary-layout.without-image-icon')
+											    @endif	
 											@endif
 										@endforeach
 										<div class="col-md-12 pagination-container">
@@ -380,14 +391,20 @@ nav div:first-child{
 											@if($rowData->image_icon == 1 )
 												@if ($thematicSlug == "thematic-impacts")
 													@include('pages.primary-layout.thematic-image')
-												@else
+												@elseif(strpos(strtoupper($catSlug), 'ANNUAL REPORTS') !== false)
+											        @include('pages.primary-layout.image-annual-report')
+											    @else
 													@include('pages.primary-layout.image')
 												@endif
 												@php $isImage=true; @endphp
 											@elseif($rowData->image_icon == 2 )
 												@include('pages.primary-layout.icon')
 											@elseif($rowData->image_icon == 3 )
-												@include('pages.primary-layout.without-image-icon')
+											    @if(strpos(strtoupper($catSlug), 'ANNUAL REPORTS') !== false)
+											        @include('pages.primary-layout.without-image-icon-annual-report')
+											    @else
+												    @include('pages.primary-layout.without-image-icon')
+											    @endif	
 											@endif
 										@endforeach
 									

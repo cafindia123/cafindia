@@ -48,27 +48,27 @@
           <h3 class="heading_c">{{ $sectionKey }}</h3>
           <div class="row p-3">
             @foreach ($sectionData as $rowKey=>$rowData) 
-              <div class="col-md-12 p-0 mb-3 custom-media-style">
-                @if($rowData->image)
-                    <div class="custom-media-file left-style" style="background-image: url({{ Voyager::image( $rowData->image )}});" ></div>
-                @endif
-                <div class="custom-media-text @if($rowData->image) @else w-100 @endif right-style ">
-                  <div class="team-name-container " style="float: left;">
-                    <div class="team-name">
-                      <h3>{{$rowData->name}}</h3>
+              <div class="col-md-12 p-4 mb-3 custom-media-style">
+                <div class="d-flex">
+                  @if($rowData->image)
+                  <div class="mr-4">
+                    <div style="width: 250px;" class="text-center">
+                      <img src="{{ Voyager::image( $rowData->image )}}" height="250" />
                     </div>
-                    <div class="team-designation">
-                      {{$rowData->designation}}
-                    </div>
-                  </div>
-                  <div class="team-about-container" style="float: left;">
-                    <div class="team-about"> 
-                      {{$rowData->description}}
+                    <div class="">
+                      <div class="trustee-name item">
+                        <div class="borders"></div>
+                        <h3>{{$rowData->name}}</h3>
+                        {{$rowData->designation}}
+                      </div>
                     </div>
                   </div>
-                  <div style="clear: both;"></div>
+                  @endif
+                  <div class="custom-media-text p-0 @if($rowData->image) @else w-100 @endif right-style ">
+                     {!!  $rowData->description !!} 
+                  </div>
+
                 </div>
-                <div style="clear: both;"></div>
               </div>
             @endforeach
           </div>

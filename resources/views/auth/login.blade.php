@@ -44,5 +44,10 @@
                 </x-jet-button>
             </div>
         </form>
+        <div style="position: absolute; bottom: 15px; right: 25px;">
+            <div class="d-flex justify-content-end">
+                <a href="/page/privacy-and-cookies" target="_blank">Privacy Policy</a>
+            </div>
+        </div>
     </x-jet-authentication-card>
 </x-guest-layout>

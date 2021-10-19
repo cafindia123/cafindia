@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Aacotroneo\Saml2\Saml2Auth;
+use Aacotroneo\Saml2\Events\Saml2LogoutEvent;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -76,5 +78,14 @@ class LoginController extends Controller
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
+    } 
+    
+    
+    public function logout(Request $request)
+    { 
+        Auth::logout();  
+        $auth = session()->get('saml_event')->getSaml2Auth();
+        $request->session()->invalidate();
+        return $auth->logout();
     }
 }

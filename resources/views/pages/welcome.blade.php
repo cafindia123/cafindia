@@ -127,7 +127,7 @@
       <div class="container-no">
         <div class="row" style="padding-left: 100px; padding-right:100px;">
           <div class="col-lg-12">
-            <h3 class="heading_c">how can we help you ?</h3>
+            <h3 class="heading_d border-0">how can we help you ?</h3>
             <div class="row mt-3">
               @foreach($featureds as $rowKey=>$rowData)
                 <?php
@@ -280,7 +280,7 @@
         <div class="row  d-flex align-items-stretch">
 
           <div class="col-lg-12 text-center mt-3" data-aos="fade-up">
-            <h4 class=" heading_c">Donate to a charity</h4>
+            <h4 class="heading_d border-0">Donate to a charity</h4>
             <h3>Join our mailing list. Keep abreast with the latest news on giving in India..</h3>
             {{-- <h3>Find causes that matter to you and donate now.</h3> --}}
 

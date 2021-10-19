@@ -105,7 +105,7 @@
                             @else
                             <a href="{{ route('PrimaryNavBarChaild', ['page_slug' => $parentCat,'child_slug'=>$rowData->slug ])}}">{{$rowData->name}}</a>
                             @endif
-                            
+
                             @if($rowData->children->isNotEmpty())
                               <ul>
                                 @foreach($rowData->children as $rowKey=>$rowData)
@@ -183,7 +183,7 @@
               @if($rowData->slug == "connect-workshop")
                 <li><a href="{{ route('PrimaryNavBarChaild', ['page_slug' =>'for-ngos','child_slug'=>'capacity-building' ])}}">{{$rowData->name}}</a></li>
 							@elseif($rowData->slug == "thematic-impacts")
-                
+
               @else
                 <li class="childNav @if($rowData->children->isNotEmpty()) drop-down @endif">
                   <a href="{{ route('footerNavBarChaild', ['category_slug' => $parentCat,'child_slug'=>$rowData->slug ])}}">{{$rowData->name}}</a>
@@ -211,7 +211,7 @@
 						@endif
 						@endforeach
 						@if($parentCat == "what-we-do")
-              
+
 							<li><a href="{{ route('PrimaryNavBarChaild', ['page_slug' =>'for-ngos','child_slug'=>'ngo-validation' ])}}">NGO Validation</a></li>
 							<li><a href="{{ route('PrimaryNavBarChaild', ['page_slug' =>'for-companies','child_slug'=>'volunteering' ])}}">Volunteer with Us</a></li>
 							<li><a href="{{ route('PrimaryNavBar', ['page_slug' => 'events' ])}}">Events</a></li>
@@ -295,7 +295,7 @@
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
 
-<script> 
+<script>
 	$("nav.nav-menu ul li.parentNav").each(function(key,val){
 		if($(this).find("ul li").length==0){
 			$(this).removeClass("drop-down");

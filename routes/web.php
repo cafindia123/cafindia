@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Http\Controllers\PasswordResetLinkController;
 
 // use App\Http\Controllers\Controller;
 // Route::get('/',  [Controller::class, 'index'])->name('welcome');
@@ -19,9 +20,11 @@ use Illuminate\Support\Facades\Route;
 /* Route::get('/', function () {
     return view('welcome');
 })->name('welcome'); */
-// Route::get('/register', '\\App\\Http\\Controllers\\Auth\\RegisterController@showRegistrationForm')->name('register');
- Route::post('/login', '\\App\\Http\\Controllers\\Auth\\LoginController@postLogin')->name('login');
-
+Route::get('/register', '\\App\\Http\\Controllers\\Auth\\RegisterController@showRegistrationForm')->name('register');
+Route::get('/login', '\\Laravel\\Fortify\\Http\\Controllers\\AuthenticatedSessionController@create');
+Route::post('/login', '\\App\\Http\\Controllers\\Auth\\LoginController@postLogin')->name('login');
+Route::post('/logout', '\\App\\Http\\Controllers\\Auth\\LoginController@logout')->name('logout');
+Route::get('/forgot-password', [PasswordResetLinkController::class, 'create']);
 Route::get('/', 'Controller@index')->name('welcome');
 Route::get('/trustees', 'Controller@trustees')->name('trustees');
 Route::get('/team', 'Controller@team')->name('team');
@@ -40,7 +43,7 @@ Route::post('/ngos/register', 'Controller@ngoRegisterStore')->name('ngo.register
 
 Route::get('/donate/now', 'Controller@donateNow')->name('donate.now');
 Route::post('/donate/now', 'Controller@donateNowStore')->name('donate.now.store');
-Route::get('/search/', 'Controller@searchSystem')->name('search'); 
+Route::get('/search/', 'Controller@searchSystem')->name('search');
 
 Route::group(['prefix' => 'admin'], function () {
 	  Voyager::routes();
@@ -53,16 +56,16 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/primary-page-sections', ['uses' => $namespacePrefix.'PrimarySubPageController@store', 'as' => 'store']);
             Route::post('/primary-page-section-cards', ['uses' => $namespacePrefix.'PrimarySubPageController@store', 'as' => 'store-cards']);
             Route::post('/primary-page-section-custom-layout', ['uses' => $namespacePrefix.'PrimarySubPageController@store', 'as' => 'store-custom-layout']);
-        }); 
+        });
         Route::group([
             'as'     => 'footer-page-sections.',
             'prefix' => 'footer-page-sections',
         ], function () use ($namespacePrefix) {
             Route::post('/footer-page-sections', ['uses' => $namespacePrefix.'FooterSubPageController@store', 'as' => 'store']);
             Route::post('/footer-page-section-cards', ['uses' => $namespacePrefix.'FooterSubPageController@store', 'as' => 'store-cards']);
-        }); 
-  
+        });
 });
+
 Route::get('/clear', function() {
     Artisan::call('view:clear');
     Artisan::call('cache:clear');
@@ -76,7 +79,7 @@ Route::get('/clear', function() {
     //Artisan::call('queue:work --tries=3');
 
     return "Cleared!";
-});/* 
+});/*
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 }); */
@@ -84,7 +87,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', 'FrontUserController@donationHistory')->name('dashboard');
     Route::get('/dashboard/explore-all-programs', 'FrontUserController@exploreAllPrograms')->name('exploreAllPrograms');
-    
+
 });
 Route::get('content-details/{page_slug}/{slug}', 'Controller@blogContent')->name('blog.content');
 

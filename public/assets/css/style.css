@@ -128,6 +128,7 @@ img{
 
 /*--------------------------------------------------------------
 # Back to top button
+
 --------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
@@ -505,6 +506,9 @@ form.example::after {
   .nav-menu .drop-down .drop-down > a:after {
     content: \eaa0;
   }
+.heads {
+    padding: 0px 0px 0px 15px !important;
+}
 }
 
 /* Mobile Navigation */
@@ -920,6 +924,7 @@ form.example::after {
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   border: 0;
+
   background: var(--base-color);
 }
 
@@ -929,7 +934,7 @@ form.example::after {
 
 @media (max-width: 768px) {
   #hero{
-    margin-top: 150px;;
+    margin-top: 0px;;
   }
   #hero h2 {
     font-size: 28px;
@@ -2037,12 +2042,12 @@ box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.25);
   background-repeat: no-repeat;
 }
 .heading_c{
+  font-weight: 500;
   font-family: "BEBAS";
   color: var(--base-color);
   font-size: 26px;
-  text-shadow: var(--base-color) 0 0 1px;;
   position: relative;
-  font-weight: bold;
+  letter-spacing: normal !important;
   text-transform: uppercase;
 }
 /* .heading_c:after{
@@ -2691,7 +2696,6 @@ background: linear-gradient(90deg, rgba(195,217,74,1) 0%, rgba(81,205,49,1) 70%)
 }
 .trustee-name{
   font-size: 14px;
-  min-height: 150px;
 }
 .trustee-name h3{
   color: var(--base-color);
@@ -2709,7 +2713,7 @@ background: linear-gradient(90deg, rgba(195,217,74,1) 0%, rgba(81,205,49,1) 70%)
   position: fixed;
   top: 0;
   background: #ffffff;
-  z-index: 12;
+  z-index: 9999;
   right: 0;
   left: 0;
   padding-top:5px !important;
@@ -2754,6 +2758,7 @@ form.example {
   width: 80px;
   margin-left: 20px;
   margin-bottom: 20px;
+  margin: 0 auto;	
 }
 .logoline {
   margin-top:0px;
@@ -2805,9 +2810,12 @@ form.example {
     width: 100%;
     display:block;
   }
-  .links{
-    float:left !important;
-  }
+.links {
+    float: none !important;
+    padding: 10px 0px 22px;
+    margin: 0 auto;
+    text-align: center;
+}
   #header .logo img{
     max-width: 80px;
   }
@@ -2834,15 +2842,18 @@ form.example {
   }
   #hero .btn-get-started{
     font-size: 12px !important;
+
     padding: 10px;
     margin-left: 0px;
   }
-  .tagline{
+.tagline {
     font-size: 22px;
     margin-bottom: 10px;
-  }
+    max-width: 100% !important;
+    flex: 0 0 100%;
+}
   .mobile-nav-toggle{
-    top:108px;
+    top: 88px;
   }
   .mobile-nav-toggle i{
     color:var(--base-color) !important;
@@ -2888,8 +2899,24 @@ form.example {
   height: 60px;
   margin-top: 0px !important;
 }
-
-
+#header:before{
+ display: none;
+}
+#topbar .container-fluid .row.pl-5.pr-2 {
+    padding: 0px 15px !important;
+}
+.heads {
+    position: relative;
+    z-index: 4;
+    top: 5px;
+}	
+#topbar .links a, #topbar .links a:last-child {
+    font-size: 12px;
+    padding: 5px 10px;
+}	
+#how-can-help .row, .container-no.media-section .row {
+    padding: 0px 15px !important;
+}	
 }
 @media (max-width: 480px) {
   .trustee ul li{
@@ -2937,20 +2964,26 @@ form.example {
         margin-top: 35px !important;
       }
   }
+@media (min-width: 1023px) and (max-width: 1250px) {
+.nav-menu, .nav-menu * {
+    font-weight: normal;
+    letter-spacing: 0.4px;
+	font-size: 11px;
+}
+}
 @media (min-width: 992px) and (max-width: 1024px) {
   .tagline{
     font-size: 14px;
   }
   .nav-menu, .nav-menu * {
     font-size: 10px;
-    letter-spacing: 0px;
+	letter-spacing: 0px;  
   }
   .nav-menu a {
     padding: 12px 8px;
-    letter-spacing: 10px;
   }
   .logoline {
-    margin-top: -40px !important;
+    margin-top: -70px !important;
   }
   .container-no .col-lg-8{
     padding-left: 30px !important;
@@ -2967,12 +3000,15 @@ form.example {
     }
 
     .logoline {
-      margin-top: -20px;
+      margin-top: -40px;
   }
-  .mobile-nav-toggle {
-    right: 120px;
-    top: 70px;
+.mobile-nav-toggle {
+    right: 223px;
+    top: 19px;
 }
+#topbar .container-fluid .row.pl-5.pr-2 {
+    padding: 0px 15px !important;
+}	
 .mobile-nav-toggle i {
   color: var(--base-color);
 }
@@ -3008,9 +3044,6 @@ form.example {
     padding: 12px 10px;
     font-size: 10px;
 }
-.logoline {
-  margin-top: -37px;
-}
 .over_text{
   font-size: 11px;
 }
@@ -3037,7 +3070,7 @@ form.example {
 }
 @media (max-width: 1300px) {
   .nav-menu a{
-    padding: 12px 7px !important;
+    padding: 12px 5px !important;
   }
 }
 @media (min-width: 1440px) {
@@ -3620,3 +3653,10 @@ a.vs_link.style-normal:hover{
   margin-bottom: 10px;
 }
 
+.c-pointer{
+  cursor: pointer;
+}
+
+.c-default{
+  cursor: default;
+}

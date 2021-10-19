@@ -26,7 +26,7 @@
                 <p>{!! $rowData->description !!}</p>
                 @if($rowData->link)
                     <a class="@if($rowData->link_type == 'BUTTON') btn btn-primary @endif" style="margin: 0px;" href="{{$rowData->link}}"
-                    target="_blank">{{$rowData->link_text}}</a>
+                    @if(strpos($rowData->link, env('APP_URL')) === false ) target="_blank" @endif>{{$rowData->link_text}}</a>
                 @endif
             </div>
             <div class="col-md-4">
@@ -50,7 +50,7 @@
                 <h3 class="heading_c">{{$rowData->title}}</h3>
                 <p>{!! $rowData->description !!}</p>
                 @if($rowData->link)
-                    <a class="@if($rowData->link_type == 'BUTTON') btn btn-primary donate_btn @endif" style="margin: 0px;" href="{{$rowData->link}}" target="_blank">{{$rowData->link_text}}</a>
+                    <a class="@if($rowData->link_type == 'BUTTON') btn btn-primary donate_btn @endif" style="margin: 0px;" href="{{$rowData->link}}" @if(strpos($rowData->link, env('APP_URL')) === false ) target="_blank" @endif>{{$rowData->link_text}}</a>
                 @endif
             </div>
             <div class="clearfix"></div>
